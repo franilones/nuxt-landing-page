@@ -2,7 +2,12 @@
   <v-app>
     <v-main>
       <v-container class="text-center">
-        <v-btn color="secondary" @click="sayHello">{{$t('welcome')}}</v-btn>
+        <v-btn
+          color="secondary"
+          @click="sayHello"
+        >
+          {{ $t('welcome') }}
+        </v-btn>
       </v-container>
     </v-main>
   </v-app>
