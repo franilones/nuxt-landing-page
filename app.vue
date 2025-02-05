@@ -2,13 +2,18 @@ import { Header } from './components/header/Header.vue'
 
 <script setup lang="ts">
 import { useLanguageStore } from './store/useLanguageStore'
+import { useThemeStore } from './store/useThemeStore'
 
 const languageStore = useLanguageStore()
+const themeStore = useThemeStore()
+
 function sayHello(): void {
   console.warn('¡Vuetify está funcionando correctamente con TypeScript!')
 }
+
 onMounted(() => {
   languageStore.initializeLanguage()
+  themeStore.initializeTheme()
 })
 </script>
 
