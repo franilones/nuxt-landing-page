@@ -8,8 +8,8 @@ const socialLinks = [
 
 <template>
   <nav class="social-links" aria-label="Redes sociales">
-    <v-list>
-      <v-list-item
+    <div role="list" class="social-links__list">
+      <a
         v-for="link in socialLinks"
         :key="link.name"
         :href="link.url"
@@ -17,18 +17,18 @@ const socialLinks = [
         class="social-links__item"
         target="_blank"
         rel="noopener noreferrer"
+        role="listitem"
       >
         <v-icon>{{ link.icon }}</v-icon>
-      </v-list-item>
-    </v-list>
+      </a>
+    </div>
   </nav>
 </template>
 
 <style scoped>
-.social-links {
+.social-links__list {
   display: flex;
   gap: 0.5rem;
-  font-size: 24px;
 }
 
 .social-links__item {
@@ -37,14 +37,16 @@ const socialLinks = [
   justify-content: center;
   text-decoration: none;
   color: var(--primary-color);
+  font-size: 24px;
+  border-radius: 8px;
+  transition: background-color var(--animation-duration), color var(--animation-duration), transform var(--animation-duration);
 }
 
-.social-links__item:hover {
-  color: var(--hover-color);
-}
-
+.social-links__item:hover,
 .social-links__item:focus {
   color: var(--hover-color);
   background-color: var(--primary-color);
+  transform: scale(1.2);
+  border: 2px solid var(--primary-color)  ;
 }
 </style>

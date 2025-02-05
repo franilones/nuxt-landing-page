@@ -26,7 +26,7 @@
     --success-background: #002b24;
 }
 
-[data-animations="off"] {
+[data-reduced-motion="true"] {
     --animation-duration: 0s;
     --animation-state: paused;
 }

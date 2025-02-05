@@ -1,9 +1,9 @@
 import { Header } from './components/header/Header.vue'
 
 <script setup lang="ts">
+import { useAnimationStore } from './store/useAnimationStore'
 import { useLanguageStore } from './store/useLanguageStore'
 import { useThemeStore } from './store/useThemeStore'
-import { useAnimationStore } from './store/useAnimationStore'
 
 const languageStore = useLanguageStore()
 const themeStore = useThemeStore()
