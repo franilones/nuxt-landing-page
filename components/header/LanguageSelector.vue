@@ -19,6 +19,7 @@ function setLanguage(language: string): void {
     :label="$t('selectLanguage')"
     class="language-selector"
     @update:model-value="setLanguage"
+    bg-color="#afdde5"
   />
 </template>
 
@@ -26,5 +27,6 @@ function setLanguage(language: string): void {
 .language-selector {
   width: auto;
   min-width: 190px;
+  font-family: 'Verdana', sans-serif;
 }
 </style>

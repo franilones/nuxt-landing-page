@@ -28,6 +28,7 @@ const socialLinks = [
 .social-links {
   display: flex;
   gap: 0.5rem;
+  font-size: 24px;
 }
 
 .social-links__item {
@@ -35,9 +36,15 @@ const socialLinks = [
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  color: var(--primary-color);
 }
 
-.social-links__icon {
+.social-links__item:hover {
+  color: var(--hover-color);
+}
 
+.social-links__item:focus {
+  color: var(--hover-color);
+  background-color: var(--primary-color);
 }
 </style>

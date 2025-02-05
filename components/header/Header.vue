@@ -36,6 +36,7 @@ import ThemeToggle from './ThemeToggle.vue'
   width: 100%;
   margin: 0 auto;
   background-color: var(--background-color);
+  border-bottom: 2px solid var(--primary-color);
 }
 
 .header__navigation {
@@ -46,14 +47,17 @@ import ThemeToggle from './ThemeToggle.vue'
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 1rem;
 }
 .header__language-selector{
   width: 100%;
 }
+
 .header__buttons {
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
   margin-bottom: 1rem;
   gap: 1rem;
+  width: 100%;
 }
 </style>
-

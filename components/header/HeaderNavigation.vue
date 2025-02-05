@@ -39,19 +39,4 @@ const navigationItems = [
   display: flex;
   gap: 1rem;
 }
-
-.header-nav__item {
-
-}
-
-.header-nav__theme-toggle {
-}
-
-.header-nav__animation-toggle {
-}
-
-.header-nav__social-links {
-  display: flex;
-  gap: 0.5rem;
-}
 </style>
