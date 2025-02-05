@@ -1,8 +1,15 @@
-import { Header } from './.nuxt/components';
+import { Header } from './components/header/Header.vue'
+
 <script setup lang="ts">
+import { useLanguageStore } from './store/useLanguageStore'
+
+const languageStore = useLanguageStore()
 function sayHello(): void {
   console.warn('¡Vuetify está funcionando correctamente con TypeScript!')
 }
+onMounted(() => {
+  languageStore.initializeLanguage()
+})
 </script>
 
 <template>

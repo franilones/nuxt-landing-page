@@ -13,7 +13,6 @@ const animationStore = useAnimationStore()
   >
     <v-icon>
       {{ animationStore.areAnimationsEnabled ? 'mdi-motion-pause' : 'mdi-motion-play' }}
-
     </v-icon>
   </v-btn>
 </template>
