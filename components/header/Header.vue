@@ -37,6 +37,7 @@ import ThemeToggle from './ThemeToggle.vue'
   margin: 0 auto;
   background-color: var(--background-color);
   border-bottom: 2px solid var(--primary-color);
+  border-top: 2px solid var(--primary-color);
 }
 
 .header__navigation {

@@ -1,11 +1,14 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
+import { useLocalStorageStore } from './useLocalStorageStore'
 
 export const useThemeStore = defineStore('theme', () => {
+  const localStorageStore = useLocalStorageStore()
   const isDarkTheme = ref(false)
 
   function updateTheme() {
     document.documentElement.setAttribute('data-theme', isDarkTheme.value ? 'dark' : 'light')
+    localStorageStore.updateUserPreferences({ theme: isDarkTheme.value ? 'dark' : 'light' })
   }
 
   function toggleTheme() {
@@ -14,9 +17,9 @@ export const useThemeStore = defineStore('theme', () => {
   }
 
   function initializeTheme() {
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-    isDarkTheme.value = prefersDark
-    updateTheme()
+    const storedTheme = localStorageStore.userPreferences.theme
+    isDarkTheme.value = storedTheme === 'dark'
+    document.documentElement.setAttribute('data-theme', isDarkTheme.value ? 'dark' : 'light')
   }
 
   return {

@@ -1,15 +1,19 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { useLanguageStore } from '~/store/useLanguageStore'
 
 const languageStore = useLanguageStore()
-const selectedLanguage = ref(languageStore.currentLanguage.name)
 const availableLanguages = ref(languageStore.languages.map(language => language.name))
 
-function setLanguage(language: string): void {
-  const languageToSet = languageStore.languages.find(l => l.name === language)
-  languageStore.setLanguage(languageToSet)
-}
+const selectedLanguage = computed({
+  get: () => languageStore.currentLanguage.name,
+  set: (newLanguage) => {
+    const languageToSet = languageStore.languages.find(l => l.name === newLanguage)
+    if (languageToSet) {
+      languageStore.setLanguage(languageToSet)
+    }
+  },
+})
 </script>
 
 <template>
@@ -18,7 +22,6 @@ function setLanguage(language: string): void {
     :items="availableLanguages"
     :label="$t('selectLanguage')"
     class="language-selector"
-    @update:model-value="setLanguage"
     bg-color="#afdde5"
   />
 </template>

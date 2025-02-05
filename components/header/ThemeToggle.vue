@@ -8,8 +8,8 @@ const themeStore = useThemeStore()
   <v-btn
     :aria-label="themeStore.isDarkTheme ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro'"
     prepend-icon
-    @click="themeStore.toggleTheme"
     class="theme-toggle"
+    @click="themeStore.toggleTheme"
   >
     <v-icon>
       {{ themeStore.isDarkTheme ? 'mdi-weather-sunny' : 'mdi-weather-night' }}
