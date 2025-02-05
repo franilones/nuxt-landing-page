@@ -3,9 +3,11 @@ import { Header } from './components/header/Header.vue'
 <script setup lang="ts">
 import { useLanguageStore } from './store/useLanguageStore'
 import { useThemeStore } from './store/useThemeStore'
+import { useAnimationStore } from './store/useAnimationStore'
 
 const languageStore = useLanguageStore()
 const themeStore = useThemeStore()
+const animationStore = useAnimationStore()
 
 function sayHello(): void {
   console.warn('¡Vuetify está funcionando correctamente con TypeScript!')
@@ -14,6 +16,7 @@ function sayHello(): void {
 onMounted(() => {
   languageStore.initializeLanguage()
   themeStore.initializeTheme()
+  animationStore.initializeAnimations()
 })
 </script>
 

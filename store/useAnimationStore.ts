@@ -1,7 +1,9 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
+import { useLocalStorageStore } from './useLocalStorageStore'
 
 export const useAnimationStore = defineStore('animation', () => {
+  const localStorageStore = useLocalStorageStore()
   const areAnimationsEnabled = ref(true)
 
   function toggleAnimations() {
@@ -11,12 +13,13 @@ export const useAnimationStore = defineStore('animation', () => {
 
   function updateAnimationState() {
     document.documentElement.setAttribute('data-reduced-motion', areAnimationsEnabled.value ? 'false' : 'true')
+    localStorageStore.updateUserPreferences({ animationsEnabled: areAnimationsEnabled.value })
   }
-  // TODO: Check if this is needed
+
   function initializeAnimations() {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    areAnimationsEnabled.value = !prefersReducedMotion
-    updateAnimationState()
+    const storedAnimations = localStorageStore.userPreferences.animationsEnabled
+    areAnimationsEnabled.value = storedAnimations
+    document.documentElement.setAttribute('data-reduced-motion', areAnimationsEnabled.value ? 'false' : 'true')
   }
 
   return {
