@@ -35,7 +35,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <nav class="header-nav" role="navigation" aria-label="Cabecera de la página">
+  <nav class="header-nav" role="navigation" aria-label="Menú principal de navegación">
     <ul class="header-nav__list" role="menubar">
       <li
         v-for="item in navigationItems"
@@ -78,5 +78,31 @@ onMounted(() => {
 
 .header-nav__item {
   display: inline;
+}
+@media (max-width: 768px){
+  .header-nav {
+    padding: 0;
+  }
+  .header-nav__list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch  ;
+    justify-content: center;
+    background-color: var(--primary-color);
+
+    width: 100%;
+  }
+  .header-nav__link{
+    display: block;
+    width: 100%;
+    border-radius: 0;
+    color: var(--hover-color);
+    transition: var(--animation-duration);
+    text-align: center;
+  }
+  .header-nav__link:hover, .header-nav__link:focus{
+    background-color: var(--hover-color);
+    color: var(--primary-color);
+  }
 }
 </style>

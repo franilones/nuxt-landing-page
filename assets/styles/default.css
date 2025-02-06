@@ -9,7 +9,7 @@
     --error-background: #fff5f5;
     --success-color: #00796b;
     --success-background: #f0fff4;
-    --animation-duration: 0.3s;
+    --animation-duration: 0.4s;
     --animation-state: running;
 }
 
@@ -66,3 +66,14 @@ a:hover, a:focus {
     padding: 10px;
     border-radius: 4px;
 }
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }

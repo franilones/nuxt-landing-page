@@ -29,7 +29,7 @@ const selectedLanguage = computed({
 <style scoped>
 .language-selector {
   width: auto;
-  min-width: 190px;
+  min-width: 160px;
   font-family: 'Verdana', sans-serif;
 }
 </style>
