@@ -33,14 +33,14 @@ onUnmounted(() => {
         <v-icon>{{ isMenuOpen ? 'mdi-close' : 'mdi-menu' }}</v-icon>
         <span class="sr-only">{{ isMenuOpen ? 'Cerrar menú' : 'Abrir menú' }}</span>
       </v-btn>
-      <div class="header__container" v-if="isMenuOpen || !isMobile">
+      <div class="header__container">
       <div class="header__social-links">
         <SocialLinks />
       </div>
-      <div class="header__navigation">
+      <div class="header__navigation" v-if="isMenuOpen || !isMobile">
         <HeaderNavigation />
       </div>
-      <div class="header__controls">
+      <div class="header__controls" v-if="isMenuOpen || !isMobile">
         <div class="header__language-selector">
           <LanguageSelector />
         </div>
@@ -85,9 +85,7 @@ onUnmounted(() => {
   gap: 1rem;
   width: 100%;
 }
-.header__toggle-button{
-  display: none;
-}
+
 @media (max-width: 768px) {
   .header{
     position: sticky;
@@ -100,19 +98,32 @@ onUnmounted(() => {
   .header--closed{
     background-color: var(--primary-color);
   }
-  .header__container {
+  .header--open .header__container {
     flex-direction: column;
-
     justify-content: center;
     align-items: stretch;
   }
-  .header__social-links{
+  .header--closed .header__container {
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: right;
+  }
+
+  .header--open .header__social-links {
     width: 100%;
     display: flex;
     justify-content: center;
     order: 1;
     margin-bottom: 1rem;
-  }
+}
+
+.header--closed .header__social-links {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    order: 1;
+    margin-bottom: 1rem;
+}
 
   .header__navigation {
     width: 100%;
@@ -128,15 +139,21 @@ onUnmounted(() => {
     align-items: center;
   }
 
+  .header__language-selector{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+  }
   .header__toggle-button {
     display: block;
     align-items: center;
     justify-content: center;
-    border-radius: 1px;
+    border-radius: 3px;
+    border: 2px solid var(--secondary-color);
     width: 48px;
     height: 48px;
     background-color: var(--primary-color);
-    color: var(--hover-color);
+    color: var(--secondary-color);
   }
   .header__toggle-button:hover, .header__toggle-button:focus {
     background-color: var(--hover-color);

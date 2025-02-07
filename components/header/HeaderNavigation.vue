@@ -74,11 +74,20 @@ onMounted(() => {
 .header-nav__link {
   padding: 0.5rem 1rem;
   border-radius: 4px;
+  transition: background-color var(--animation-duration), color var(--animation-duration), transform var(--animation-duration);
 }
 
 .header-nav__item {
   display: inline;
 }
+
+.header-nav__link:hover, .header-nav__link:focus{
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  transform: scale(1.2);
+  font-weight: bold;
+}
+
 @media (max-width: 768px){
   .header-nav {
     padding: 0;
@@ -96,13 +105,14 @@ onMounted(() => {
     display: block;
     width: 100%;
     border-radius: 0;
-    color: var(--hover-color);
+    color: var(--secondary-color);
     transition: var(--animation-duration);
     text-align: center;
   }
   .header-nav__link:hover, .header-nav__link:focus{
     background-color: var(--hover-color);
-    color: var(--primary-color);
+    color: var(--background-color);
+    transform: scale(1.2);
   }
 }
 </style>
