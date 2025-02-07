@@ -110,8 +110,8 @@ onMounted(() => {
     text-align: center;
   }
   .header-nav__link:hover, .header-nav__link:focus{
-    background-color: var(--hover-color);
-    color: var(--background-color);
+    background-color: var(--background-color);
+    color: var(--primary-color);
     transform: scale(1.2);
   }
 }

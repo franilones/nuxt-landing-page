@@ -95,6 +95,10 @@ onUnmounted(() => {
   .header--open{
     border: 2px solid var(--primary-color);
   }
+  [data-theme="dark"] .header--closed{
+    background-color: var(--background-color);
+  }
+
   .header--closed{
     background-color: var(--primary-color);
   }
@@ -149,15 +153,17 @@ onUnmounted(() => {
     align-items: center;
     justify-content: center;
     border-radius: 3px;
-    border: 2px solid var(--secondary-color);
+    border: 2px solid var(--primary-color);
     width: 48px;
     height: 48px;
-    background-color: var(--primary-color);
-    color: var(--secondary-color);
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    transition: background-color var(--animation-duration), color var(--animation-duration), transform var(--animation-duration);
   }
   .header__toggle-button:hover, .header__toggle-button:focus {
-    background-color: var(--hover-color);
+    background-color: var(--background-color);
     color: var(--primary-color);
+    transform: scale(1.3);
   }
 }
 </style>
