@@ -29,18 +29,18 @@ onUnmounted(() => {
 
 <template>
   <header class="header" :class="{ 'header--open': isMenuOpen, 'header--closed': !isMenuOpen }" role="banner" aria-label="Cabecera de la página">
-      <v-btn icon @click="toggleMenu" class="header__toggle-button" v-if="isMobile">
-        <v-icon>{{ isMenuOpen ? 'mdi-close' : 'mdi-menu' }}</v-icon>
-        <span class="sr-only">{{ isMenuOpen ? 'Cerrar menú' : 'Abrir menú' }}</span>
-      </v-btn>
-      <div class="header__container">
+    <v-btn v-if="isMobile" icon class="header__toggle-button" @click="toggleMenu">
+      <v-icon>{{ isMenuOpen ? 'mdi-close' : 'mdi-menu' }}</v-icon>
+      <span class="sr-only">{{ isMenuOpen ? 'Cerrar menú' : 'Abrir menú' }}</span>
+    </v-btn>
+    <div class="header__container">
       <div class="header__social-links">
         <SocialLinks />
       </div>
-      <div class="header__navigation" v-if="isMenuOpen || !isMobile">
+      <div v-if="isMenuOpen || !isMobile" class="header__navigation">
         <HeaderNavigation />
       </div>
-      <div class="header__controls" v-if="isMenuOpen || !isMobile">
+      <div v-if="isMenuOpen || !isMobile" class="header__controls">
         <div class="header__language-selector">
           <LanguageSelector />
         </div>
