@@ -10,6 +10,16 @@ export default antfu({
     override: {
       'style/comma-dangle': 'error',
       'style/max-statements-per-line': 'off',
+      'vue/max-attributes-per-line': [
+        'error',
+        {
+          singleline: 1,
+          multiline: {
+            max: 1,
+            allowFirstLine: false,
+          },
+        },
+      ],
     },
   },
 })
