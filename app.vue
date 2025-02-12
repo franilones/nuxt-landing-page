@@ -1,9 +1,21 @@
 import { Header } from './components/header/Header.vue'
 
 <script setup lang="ts">
+import { useHead } from '#imports'
+import { onMounted } from 'vue'
 import { useAnimationStore } from './store/useAnimationStore'
 import { useLanguageStore } from './store/useLanguageStore'
 import { useThemeStore } from './store/useThemeStore'
+
+useHead({
+  title: 'Mi Aplicación',
+  meta: [
+    {
+      name: 'description',
+      content: 'Esta es una aplicación desarrollada con Vue, Nuxt, Vuetify y TypeScript.',
+    },
+  ],
+})
 
 const languageStore = useLanguageStore()
 const themeStore = useThemeStore()
@@ -22,8 +34,8 @@ onMounted(() => {
 
 <template>
   <v-app>
-    <v-main>
-      <Header />
+    <Header />
+    <v-main :aria-label="$t('mainContent')">
       <v-container class="text-center">
         <v-btn color="secondary" @click="sayHello">
           {{ $t('welcome') }}
