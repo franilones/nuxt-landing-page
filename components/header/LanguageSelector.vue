@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { useLanguageStore } from '~/store/useLanguageStore'
-import { useThemeStore } from '~/store/useThemeStore'
 
 const languageStore = useLanguageStore()
-const themeStore = useThemeStore()
 const availableLanguages = ref(languageStore.languages.map(language => language.name))
 
 const selectedLanguage = computed({
@@ -16,7 +14,6 @@ const selectedLanguage = computed({
     }
   },
 })
-const isDarkTheme = computed(() => themeStore.isDarkTheme)
 </script>
 
 <template>
@@ -26,7 +23,8 @@ const isDarkTheme = computed(() => themeStore.isDarkTheme)
     :label="$t('language')"
     :aria-label="$t('selectLanguage')"
     class="language-selector"
-    :bg-color="'var(--background-form-color)'"
+    bg-color="var(--background-form-color)"
+    base-color="var(--language-selector-text-color)"
   />
 </template>
 
@@ -35,10 +33,5 @@ const isDarkTheme = computed(() => themeStore.isDarkTheme)
   width: auto;
   min-width: 160px;
   font-family: 'Verdana', sans-serif;
-}
-.language-selector:hover .v-input__control,
-.language-selector:focus-within .v-input__control {
-  border: 2px solid var(--primary-color);
-  background-color: red;
 }
 </style>
