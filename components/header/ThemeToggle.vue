@@ -1,12 +1,18 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
 import { useThemeStore } from '~/store/useThemeStore'
 
+const { t } = useI18n()
+
 const themeStore = useThemeStore()
+
+const changeLightThemeLabel = computed(() => t('changeLightTheme'))
+const changeDarkThemeLabel = computed(() => t('changeDarkTheme'))
 </script>
 
 <template>
   <v-btn
-    :aria-label="themeStore.isDarkTheme ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro'"
+    :aria-label="themeStore.isDarkTheme ? changeLightThemeLabel : changeDarkThemeLabel"
     prepend-icon
     class="theme-toggle"
     data-testid="theme-toggle-btn"

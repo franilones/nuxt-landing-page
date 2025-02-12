@@ -5,11 +5,15 @@ import AnimationToggle from './AnimationToggle.vue'
 import HeaderNavigation from './HeaderNavigation.vue'
 import LanguageSelector from './LanguageSelector.vue'
 import ThemeToggle from './ThemeToggle.vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 const isMobile = ref(false)
 const isMenuOpen = ref(false)
 
 const headerRef = ref<HTMLElement | null>(null)
+const headerTitle = computed(() => t('landmarks.header'))
 
 function handleClickOutside(event: MouseEvent) {
   if (isMenuOpen.value && headerRef.value && !headerRef.value.contains(event.target as Node)) {
@@ -38,7 +42,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <header ref="headerRef" class="header" :class="{ 'header--open': isMenuOpen, 'header--closed': !isMenuOpen }" role="banner" aria-label="Cabecera de la página">
+  <header ref="headerRef" class="header" :class="{ 'header--open': isMenuOpen, 'header--closed': !isMenuOpen }" role="banner" :aria-label="headerTitle">
     <v-btn v-if="isMobile" icon class="header__toggle-button" data-testid="mobile-menu-toggle-btn" @click="toggleMenu">
       <v-icon>{{ isMenuOpen ? 'mdi-close' : 'mdi-menu' }}</v-icon>
       <span class="sr-only">{{ isMenuOpen ? 'Cerrar menú' : 'Abrir menú' }}</span>
@@ -102,16 +106,7 @@ onUnmounted(() => {
     top: 0;
     z-index: 100;
   }
-  .header--open{
-    border: 2px solid var(--primary-color);
-  }
-  [data-theme="dark"] .header--closed{
-    background-color: var(--background-color);
-  }
 
-  .header--closed{
-    background-color: var(--primary-color);
-  }
   .header--open .header__container {
     flex-direction: column;
     justify-content: center;
@@ -158,6 +153,7 @@ onUnmounted(() => {
     display: flex;
     justify-content: center;
   }
+
   .header__toggle-button {
     display: block;
     align-items: center;
@@ -171,8 +167,8 @@ onUnmounted(() => {
     transition: background-color var(--animation-duration), color var(--animation-duration), transform var(--animation-duration);
   }
   .header__toggle-button:hover, .header__toggle-button:focus {
-    background-color: var(--background-color);
-    color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: var(--background-color);
     transform: scale(1.3);
   }
 }

@@ -1,4 +1,5 @@
 import { Header } from './components/header/Header.vue'
+import Footer from './components/header/Footer.vue'
 
 <script setup lang="ts">
 import { useHead } from '#imports'
@@ -42,5 +43,6 @@ onMounted(() => {
         </v-btn>
       </v-container>
     </v-main>
+    <Footer />
   </v-app>
 </template>

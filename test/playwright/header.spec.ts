@@ -37,7 +37,7 @@ test.describe('Header Integration Tests', () => {
     await expect(html).toHaveAttribute('data-reduced-motion', 'false')
     await animationBtn.click()
 
-    await expect(animationBtn).toHaveAttribute('aria-label', /Activar animaciones/)
+    await expect(animationBtn).toHaveAttribute('aria-label', /Activate animations/)
     await expect(html).toHaveAttribute('data-reduced-motion', 'true')
   })
 
@@ -46,12 +46,12 @@ test.describe('Header Integration Tests', () => {
     const html = getHtml(page)
 
     await expect(html).toHaveAttribute('data-theme', 'dark')
-    await expect(themeBtn).toHaveAttribute('aria-label', /Cambiar a tema claro/i)
+    await expect(themeBtn).toHaveAttribute('aria-label', /Change to light theme/i)
 
     await themeBtn.click()
 
     await expect(html).toHaveAttribute('data-theme', 'light')
-    await expect(themeBtn).toHaveAttribute('aria-label', /Cambiar a tema oscuro/i)
+    await expect(themeBtn).toHaveAttribute('aria-label', /Change to dark theme/i)
   })
 })
 
