@@ -1,30 +1,36 @@
 /* Default colours */
 :root {
     --background-color: #ffffff;
+    --background-form-color:#2BCDD9;
+    --language-selector-text-color: #2d2d2d;
     --text-color: #2d2d2d;
-    --primary-color: #005f99;
-    --secondary-color: #e3f2fd;
+    --primary-color: #0fa4af;
+    --secondary-color:#ffffff;
+    --hover-color: #ffffff;
     --error-color: #ff5252;
     --error-background: #fff5f5;
     --success-color: #00796b;
     --success-background: #f0fff4;
-    --animation-duration: 0.3s;
+    --animation-duration: 0.4s;
     --animation-state: running;
 }
 
 /* Dark mode colours  */
 [data-theme="dark"] {
-    --background-color: #121212;
+    --background-color: #1F2833;
+    --background-form-color: #66fcf1;
+    --language-selector-text-color: #ffffff;
     --text-color: #e0e0e0;
-    --primary-color: #82b1ff;
+    --primary-color: #66FCF1;
     --secondary-color: #1e3a5f;
+    --hover-color: #0fa4af;
     --error-color: #ff867c;
     --error-background: #3b0000;
     --success-color: #80cbc4;
     --success-background: #002b24;
 }
 
-[data-animations="off"] {
+[data-reduced-motion="true"] {
     --animation-duration: 0s;
     --animation-state: paused;
 }
@@ -44,9 +50,9 @@ a {
     text-decoration: none;
 }
 
-a:hover {
-    color: #004466;
-    text-decoration: underline;
+a:hover, a:focus {
+    color: var(--hover-color);
+    background-color: var(--primary-color);
 }
 
 /* Error message */
@@ -64,3 +70,14 @@ a:hover {
     padding: 10px;
     border-radius: 4px;
 }
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }

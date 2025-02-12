@@ -1,3 +1,14 @@
 {
-  "welcome": "Welcome to my page"
+  "welcome": "Welcome to my page",
+  "changeLanguageTo": "Change to",
+  "selectLanguage": "Select language",
+  "currentLanguage": "Current language",
+  "language": "Language",
+  "mainContent": "Main content",
+  "header": {
+    "home": "Home",
+    "projects": "Projects",
+    "blog": "Blog",
+    "contact": "Contact"
+  }
 }

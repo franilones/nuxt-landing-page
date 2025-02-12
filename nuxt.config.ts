@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   build: {
     transpile: ['vuetify'],
   },
+  ssr: false,
   css: [
     '@/assets/styles/default.css',
   ],
@@ -18,15 +19,15 @@ export default defineNuxtConfig({
       })
     },
     '@nuxtjs/i18n',
+    '@pinia/nuxt',
   ],
   i18n: {
     locales: [
-      { code: 'en', name: 'English', iso: 'en-US', file: 'en.json' },
-      { code: 'es', name: 'Español', iso: 'es-ES', file: 'es.json' },
+      { code: 'en', name: 'English', iso: 'en', file: 'en.json' },
+      { code: 'es', name: 'Español', iso: 'es', file: 'es.json' },
     ],
     defaultLocale: 'en',
-    lazy: true,
-    langDir: 'locales/',
+    langDir: 'locales',
     strategy: 'prefix_and_default',
     detectBrowserLanguage: {
       useCookie: true,
@@ -46,6 +47,6 @@ export default defineNuxtConfig({
       },
     },
   },
-  compatibilityDate: '2024-11-01',
+  compatibilityDate: '2025-02-04',
   devtools: { enabled: true },
 })

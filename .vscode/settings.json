@@ -3,5 +3,6 @@
     "i18n",
     "i18n/locales"
   ],
-  "CodeGPT.apiKey": "CodeGPT Plus Beta"
+  "CodeGPT.apiKey": "CodeGPT Plus Beta",
+  "i18n-ally.keystyle": "nested"
 }
