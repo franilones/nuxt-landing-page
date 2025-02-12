@@ -25,6 +25,7 @@ const selectedLanguage = computed({
     class="language-selector"
     bg-color="var(--background-form-color)"
     base-color="var(--language-selector-text-color)"
+    data-testid="language-selector"
   />
 </template>
 

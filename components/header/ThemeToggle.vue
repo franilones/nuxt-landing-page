@@ -9,6 +9,7 @@ const themeStore = useThemeStore()
     :aria-label="themeStore.isDarkTheme ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro'"
     prepend-icon
     class="theme-toggle"
+    data-testid="theme-toggle-btn"
     @click="themeStore.toggleTheme"
   >
     <v-icon>

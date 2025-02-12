@@ -9,6 +9,7 @@ const animationStore = useAnimationStore()
     :aria-label="animationStore.areAnimationsEnabled ? 'Desactivar animaciones' : 'Activar animaciones'"
     prepend-icon
     class="animation-toggle"
+    data-testid="animation-toggle-btn"
     @click="animationStore.toggleAnimations"
   >
     <v-icon>

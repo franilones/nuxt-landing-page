@@ -9,6 +9,14 @@ import ThemeToggle from './ThemeToggle.vue'
 const isMobile = ref(false)
 const isMenuOpen = ref(false)
 
+const headerRef = ref<HTMLElement | null>(null)
+
+function handleClickOutside(event: MouseEvent) {
+  if (isMenuOpen.value && headerRef.value && !headerRef.value.contains(event.target as Node)) {
+    isMenuOpen.value = false
+  }
+}
+
 function updateIsMobile() {
   isMobile.value = window.matchMedia('(max-width: 768px)').matches
 }
@@ -20,16 +28,18 @@ function toggleMenu() {
 onMounted(() => {
   updateIsMobile()
   window.addEventListener('resize', updateIsMobile)
+  document.addEventListener('click', handleClickOutside)
 })
 
 onUnmounted(() => {
   window.removeEventListener('resize', updateIsMobile)
+  document.removeEventListener('click', handleClickOutside)
 })
 </script>
 
 <template>
-  <header class="header" :class="{ 'header--open': isMenuOpen, 'header--closed': !isMenuOpen }" role="banner" aria-label="Cabecera de la página">
-    <v-btn v-if="isMobile" icon class="header__toggle-button" @click="toggleMenu">
+  <header ref="headerRef" class="header" :class="{ 'header--open': isMenuOpen, 'header--closed': !isMenuOpen }" role="banner" aria-label="Cabecera de la página">
+    <v-btn v-if="isMobile" icon class="header__toggle-button" data-testid="mobile-menu-toggle-btn" @click="toggleMenu">
       <v-icon>{{ isMenuOpen ? 'mdi-close' : 'mdi-menu' }}</v-icon>
       <span class="sr-only">{{ isMenuOpen ? 'Cerrar menú' : 'Abrir menú' }}</span>
     </v-btn>
