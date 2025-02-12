@@ -1,10 +1,11 @@
 /* Default colours */
 :root {
-    --background-color: #ffffff;
+    --background-color: #0fa4af;
     --background-form-color:#2BCDD9;
-    --language-selector-text-color: #2d2d2d;
+    --background-form-header-color: #ffffff;
+    --language-selector-text-color: #000000;
     --text-color: #2d2d2d;
-    --primary-color: #0fa4af;
+    --primary-color: #ffffff;
     --secondary-color:#ffffff;
     --hover-color: #ffffff;
     --error-color: #ff5252;
@@ -19,7 +20,8 @@
 [data-theme="dark"] {
     --background-color: #1F2833;
     --background-form-color: #66fcf1;
-    --language-selector-text-color: #ffffff;
+    --background-form-header-color: #66fcf1;
+    --language-selector-text-color: #000000;
     --text-color: #e0e0e0;
     --primary-color: #66FCF1;
     --secondary-color: #1e3a5f;

@@ -4,11 +4,27 @@
   "selectLanguage": "Seleccionar idioma",
   "currentLanguage": "Idioma actual",
   "language": "Idioma",
+  "spain": "España",
   "mainContent": "Contenido principal",
+  "contactMe": "Contactame",
+  "deactivateAnimations": "Desactivar animaciones",
+  "activateAnimations": "Activar animaciones",
+  "changeLightTheme": "Cambiar a tema claro",
+  "changeDarkTheme": "Cambiar a tema oscuro",
   "header": {
     "home": "Inicio",
     "projects": "Proyectos",
     "blog": "Blog",
     "contact": "Contacto"
+  },
+  "socials": {
+    "whatsapp": "Enviar un mensaje por WhatsApp a Francisco Olmos",
+    "email": "Enviar un email a Francisco Olmos",
+    "github": "Ir a GitHub de Francisco Olmos",
+    "linkedin": "Ir a LinkedIn de Francisco Olmos"
+  },
+  "landmarks": {
+    "footer": "Pie de página",
+    "header": "Cabecera de la página"
   }
 }

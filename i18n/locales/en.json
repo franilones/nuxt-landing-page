@@ -5,10 +5,26 @@
   "currentLanguage": "Current language",
   "language": "Language",
   "mainContent": "Main content",
+  "spain": "Spain",
+  "contactMe": "Contact me",
+  "deactivateAnimations": "Deactivate animations",
+  "activateAnimations": "Activate animations",
+  "changeLightTheme": "Change to light theme",
+  "changeDarkTheme": "Change to dark theme",
   "header": {
     "home": "Home",
     "projects": "Projects",
     "blog": "Blog",
     "contact": "Contact"
+  },
+  "socials": {
+    "whatsapp": "Send a message by WhatsApp to Francisco Olmos",
+    "email": "Send an email to Francisco Olmos",
+    "github": "Go to GitHub of Francisco Olmos",
+    "linkedin": "Go to LinkedIn of Francisco Olmos"
+  },
+  "landmarks": {
+    "footer": "Footer",
+    "header": "Header"
   }
 }

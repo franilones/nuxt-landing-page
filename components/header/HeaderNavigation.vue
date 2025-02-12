@@ -71,8 +71,9 @@ onMounted(() => {
   padding: 0;
   margin: 0;
 }
+
 .header-nav__link {
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
   border-radius: 4px;
   transition: background-color var(--animation-duration), color var(--animation-duration), transform var(--animation-duration);
 }
@@ -81,38 +82,43 @@ onMounted(() => {
   display: inline;
 }
 
-.header-nav__link:hover, .header-nav__link:focus{
+.header-nav__link:hover, .header-nav__link:focus {
   background-color: var(--primary-color);
   color: var(--background-color);
   transform: scale(1.2);
   font-weight: bold;
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
   .header-nav {
     padding: 0;
   }
   .header-nav__list {
     display: flex;
     flex-direction: column;
-    align-items: stretch  ;
+    align-items: stretch;
     justify-content: center;
-    background-color: var(--primary-color);
-
+    background-color: var(--background-color);
     width: 100%;
   }
-  .header-nav__link{
+  .header-nav__link {
     display: block;
     width: 100%;
     border-radius: 0;
-    color: var(--secondary-color);
-    transition: var(--animation-duration);
-    text-align: center;
-  }
-  .header-nav__link:hover, .header-nav__link:focus{
-    background-color: var(--background-color);
     color: var(--primary-color);
+    transition: var(--animation-duration);
+    border-bottom: 2px solid var(--primary-color);
+    text-align: center;
+    padding: 1rem;
+  }
+  .header-nav__list > li:first-child > .header-nav__link {
+    border-top: 2px solid var(--primary-color);
+  }
+  .header-nav__link:hover, .header-nav__link:focus {
+    background-color: var(--primary-color);
+    color: var(--background-color);
     transform: scale(1.2);
+    margin-top: 0;
   }
 }
 </style>

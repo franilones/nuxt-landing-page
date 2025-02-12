@@ -23,7 +23,7 @@ const selectedLanguage = computed({
     :label="$t('language')"
     :aria-label="$t('selectLanguage')"
     class="language-selector"
-    bg-color="var(--background-form-color)"
+    bg-color="var(--background-form-header-color)"
     base-color="var(--language-selector-text-color)"
     data-testid="language-selector"
   />
