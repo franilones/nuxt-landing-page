@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 import SocialLinks from '../shared/SocialLinks.vue'
 import AnimationToggle from './AnimationToggle.vue'
 import HeaderNavigation from './HeaderNavigation.vue'
 import LanguageSelector from './LanguageSelector.vue'
 import ThemeToggle from './ThemeToggle.vue'
-import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 
@@ -70,8 +70,6 @@ onUnmounted(() => {
 <style scoped>
 .header{
   background-color: var(--background-color);
-  border-bottom: 2px solid var(--primary-color);
-  border-top: 2px solid var(--primary-color);
   position: relative;
 }
 .header__container {
