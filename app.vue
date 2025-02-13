@@ -1,9 +1,9 @@
 import { Header } from './components/header/Header.vue'
 import Footer from './components/header/Footer.vue'
-
 <script setup lang="ts">
 import { useHead } from '#imports'
 import { onMounted } from 'vue'
+import AboutMe from '~/components/main/AboutMe.vue'
 import { useAnimationStore } from './store/useAnimationStore'
 import { useLanguageStore } from './store/useLanguageStore'
 import { useThemeStore } from './store/useThemeStore'
@@ -36,13 +36,15 @@ onMounted(() => {
 <template>
   <v-app>
     <Header />
-    <v-main :aria-label="$t('mainContent')">
-      <v-container class="text-center">
-        <v-btn color="secondary" @click="sayHello">
-          {{ $t('welcome') }}
-        </v-btn>
-      </v-container>
+    <v-main :aria-label="$t('mainContent')" class="main-content">
+      <AboutMe />
     </v-main>
     <Footer />
   </v-app>
 </template>
+
+<style scoped>
+.main-content {
+  background-color: var(--background-color-secondary);
+}
+</style>
