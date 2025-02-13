@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import { useMediaQuery } from '@vueuse/core'
 import { onMounted, onUnmounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import EmailBtn from '../shared/EmailBtn.vue'
 import SocialLinks from '../shared/SocialLinks.vue'
 import AnimationToggle from './AnimationToggle.vue'
 import HeaderNavigation from './HeaderNavigation.vue'
@@ -9,7 +11,7 @@ import ThemeToggle from './ThemeToggle.vue'
 
 const { t } = useI18n()
 
-const isMobile = ref(false)
+const isMobile = useMediaQuery('(max-width: 918px)')
 const isMenuOpen = ref(false)
 
 const headerRef = ref<HTMLElement | null>(null)
@@ -21,22 +23,15 @@ function handleClickOutside(event: MouseEvent) {
   }
 }
 
-function updateIsMobile() {
-  isMobile.value = window.matchMedia('(max-width: 768px)').matches
-}
-
 function toggleMenu() {
   isMenuOpen.value = !isMenuOpen.value
 }
 
 onMounted(() => {
-  updateIsMobile()
-  window.addEventListener('resize', updateIsMobile)
   document.addEventListener('click', handleClickOutside)
 })
 
 onUnmounted(() => {
-  window.removeEventListener('resize', updateIsMobile)
   document.removeEventListener('click', handleClickOutside)
 })
 </script>
@@ -50,6 +45,7 @@ onUnmounted(() => {
     <div class="header__container">
       <div class="header__social-links">
         <SocialLinks />
+        <EmailBtn v-if="!isMobile" />
       </div>
       <div v-if="isMenuOpen || !isMobile" class="header__navigation">
         <HeaderNavigation />
@@ -98,7 +94,12 @@ onUnmounted(() => {
   width: 100%;
 }
 
-@media (max-width: 768px) {
+.header__social-links {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+@media (max-width: 918px) {
   .header{
     position: sticky;
     top: 0;

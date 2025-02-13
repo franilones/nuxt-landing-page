@@ -5,19 +5,26 @@ import { useAnimationStore } from '~/store/useAnimationStore'
 const { t } = useI18n()
 
 const animationStore = useAnimationStore()
-
+const animationToggleLabel = computed(() =>
+  animationStore.areAnimationsEnabled ? t('deactivateAnimations') : t('activateAnimations'),
+)
 const deactivateAnimationsLabel = computed(() => t('deactivateAnimations'))
 const activateAnimationsLabel = computed(() => t('activateAnimations'))
 </script>
 
 <template>
   <v-btn
-    :aria-label="animationStore.areAnimationsEnabled ? deactivateAnimationsLabel : activateAnimationsLabel"
+    :aria-label="animationToggleLabel"
     prepend-icon
     class="animation-toggle"
     data-testid="animation-toggle-btn"
     @click="animationStore.toggleAnimations"
   >
+    <v-tooltip
+      :text="animationToggleLabel"
+      activator="parent"
+      location="end"
+    />
     <v-icon>
       {{ animationStore.areAnimationsEnabled ? 'mdi-motion-pause' : 'mdi-motion-play' }}
     </v-icon>
@@ -43,4 +50,9 @@ const activateAnimationsLabel = computed(() => t('activateAnimations'))
 .v-icon{
   font-size: 24px;
 }
+
+.v-tooltip > ::v-deep(.v-overlay__content) {
+  background: var(--primary-color);
+  color: var(--background-color);
+  }
 </style>

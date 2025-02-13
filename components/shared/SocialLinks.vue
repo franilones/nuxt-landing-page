@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { t, locale } = useI18n()
 
 const socialLinks = ref([])
-
+const cvLabel = computed(() => t('socials.donwloadCv'))
 function updateSocialLinks() {
   socialLinks.value = [
     { name: t('socials.email'), url: 'mailto:franolmosdev@gmail.com', icon: 'mdi-email' },
@@ -35,7 +35,25 @@ watch(locale, () => {
         rel="noopener noreferrer"
         role="listitem"
       >
+        <v-tooltip
+          :text="link.name"
+          activator="parent"
+          location="end"
+        />
         <v-icon>{{ link.icon }}</v-icon>
+      </a>
+      <a
+        :href="locale === 'es' ? '/cv/cv-es.pdf' : '/cv/cv-en.pdf'"
+        class="social-links__item"
+        :aria-label="cvLabel"
+        target="_blank"
+      >
+        <v-tooltip
+          :text="cvLabel"
+          activator="parent"
+          location="end"
+        />
+        <v-icon>mdi-download-box-outline</v-icon>
       </a>
     </div>
   </nav>
@@ -44,6 +62,7 @@ watch(locale, () => {
 <style scoped>
 .social-links__list {
   display: flex;
+  justify-content: center;
   gap: 0.5rem;
 }
 
@@ -65,4 +84,9 @@ watch(locale, () => {
   transform: scale(1.2);
   border: 2px solid var(--primary-color);
 }
+
+.v-tooltip > ::v-deep(.v-overlay__content) {
+  background: var(--primary-color);
+  color: var(--background-color);
+  }
 </style>

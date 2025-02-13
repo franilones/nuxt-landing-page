@@ -1,8 +1,10 @@
 <script setup lang="ts">
+import { useMediaQuery } from '@vueuse/core'
 import { onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
+const isMobile = useMediaQuery('(max-width: 918px)')
 
 const navigationItems = [
   { label: 'header.home', path: '/' },
@@ -35,32 +37,55 @@ onMounted(() => {
 </script>
 
 <template>
-  <nav class="header-nav" role="navigation" aria-label="Menú principal de navegación">
-    <ul class="header-nav__list" role="menubar">
-      <li
-        v-for="item in navigationItems"
-        :key="item.path"
-        class="header-nav__item"
-        role="none"
-      >
-        <a
-          :href="item.path"
-          :aria-label="t(item.label)"
-          role="menuitem"
-          class="header-nav__link"
+  <div class="header-nav__container">
+    <div v-if="!isMobile" class="header-nav__title">
+      <h1>Full Stack Developer</h1>
+    </div>
+    <nav class="header-nav" role="navigation" aria-label="Menú principal de navegación">
+      <ul class="header-nav__list" role="menubar">
+        <li
+          v-for="item in navigationItems"
+          :key="item.path"
+          class="header-nav__item"
+          role="none"
         >
-          {{ t(item.label) }}
-        </a>
-      </li>
-    </ul>
-  </nav>
+          <a
+            :href="item.path"
+            :aria-label="t(item.label)"
+            role="menuitem"
+            class="header-nav__link"
+          >
+            {{ t(item.label) }}
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </template>
 
 <style scoped>
+.header-nav__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+}
+.header-nav__title {
+  font-size: 0.8rem;
+  color: var(--secondary-color);
+  text-align: center;
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
 .header-nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  width: 100%;
   padding: 0 1rem;
 }
 
@@ -71,9 +96,8 @@ onMounted(() => {
   padding: 0;
   margin: 0;
 }
-
 .header-nav__link {
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 4px;
   transition: background-color var(--animation-duration), color var(--animation-duration), transform var(--animation-duration);
 }
@@ -82,26 +106,26 @@ onMounted(() => {
   display: inline;
 }
 
-.header-nav__link:hover, .header-nav__link:focus {
+.header-nav__link:hover, .header-nav__link:focus{
   background-color: var(--primary-color);
   color: var(--background-color);
   transform: scale(1.2);
   font-weight: bold;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px){
   .header-nav {
     padding: 0;
   }
   .header-nav__list {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: stretch  ;
     justify-content: center;
     background-color: var(--background-color);
     width: 100%;
   }
-  .header-nav__link {
+   .header-nav__link{
     display: block;
     width: 100%;
     border-radius: 0;
@@ -109,12 +133,11 @@ onMounted(() => {
     transition: var(--animation-duration);
     border-bottom: 2px solid var(--primary-color);
     text-align: center;
-    padding: 1rem;
   }
-  .header-nav__list > li:first-child > .header-nav__link {
+  .header-nav__list > li:first-child > .header-nav__link{
     border-top: 2px solid var(--primary-color);
   }
-  .header-nav__link:hover, .header-nav__link:focus {
+  .header-nav__link:hover, .header-nav__link:focus{
     background-color: var(--primary-color);
     color: var(--background-color);
     transform: scale(1.2);

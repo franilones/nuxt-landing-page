@@ -21,7 +21,10 @@
     "whatsapp": "Send a message by WhatsApp to Francisco Olmos",
     "email": "Send an email to Francisco Olmos",
     "github": "Go to GitHub of Francisco Olmos",
-    "linkedin": "Go to LinkedIn of Francisco Olmos"
+    "linkedin": "Go to LinkedIn of Francisco Olmos",
+    "donwloadCv": "Download CV",
+    "copyEmail": "Copy email",
+    "emailCopied": "Email copied"
   },
   "landmarks": {
     "footer": "Footer",

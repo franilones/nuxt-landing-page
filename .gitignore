@@ -6,6 +6,7 @@
 .cache
 dist
 .cursorrules
+test-results
 # Node dependencies
 node_modules
 playwright-report

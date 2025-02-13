@@ -5,19 +5,26 @@ import { useThemeStore } from '~/store/useThemeStore'
 const { t } = useI18n()
 
 const themeStore = useThemeStore()
-
+const themeToggleLabel = computed(() =>
+  themeStore.isDarkTheme ? t('changeLightTheme') : t('changeDarkTheme'),
+)
 const changeLightThemeLabel = computed(() => t('changeLightTheme'))
 const changeDarkThemeLabel = computed(() => t('changeDarkTheme'))
 </script>
 
 <template>
   <v-btn
-    :aria-label="themeStore.isDarkTheme ? changeLightThemeLabel : changeDarkThemeLabel"
+    :aria-label="themeToggleLabel"
     prepend-icon
     class="theme-toggle"
     data-testid="theme-toggle-btn"
     @click="themeStore.toggleTheme"
   >
+    <v-tooltip
+      :text="themeToggleLabel"
+      activator="parent"
+      location="end"
+    />
     <v-icon>
       {{ themeStore.isDarkTheme ? 'mdi-weather-sunny' : 'mdi-weather-night' }}
     </v-icon>
@@ -42,4 +49,9 @@ const changeDarkThemeLabel = computed(() => t('changeDarkTheme'))
 .v-icon{
   font-size: 24px;
 }
+
+.v-tooltip > ::v-deep(.v-overlay__content) {
+  background: var(--primary-color);
+  color: var(--background-color);
+  }
 </style>
