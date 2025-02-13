@@ -60,7 +60,7 @@ const contactTitle = computed(() => t('contactMe'))
 .footer__white__lines {
   flex-grow: 1;
   height: 6px;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   border-radius: 4px;
   margin-left: 1rem;
   margin-right: 1rem;
