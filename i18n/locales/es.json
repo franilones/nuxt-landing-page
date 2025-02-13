@@ -22,7 +22,9 @@
     "email": "Enviar un email a Francisco Olmos",
     "github": "Ir a GitHub de Francisco Olmos",
     "linkedin": "Ir a LinkedIn de Francisco Olmos",
-    "donwloadCv": "Descargar CV"
+    "donwloadCv": "Descargar CV",
+    "copyEmail": "Copiar email",
+    "emailCopied": "Email copiado"
   },
   "landmarks": {
     "footer": "Pie de página",

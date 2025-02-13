@@ -62,6 +62,7 @@ watch(locale, () => {
 <style scoped>
 .social-links__list {
   display: flex;
+  justify-content: center;
   gap: 0.5rem;
 }
 
