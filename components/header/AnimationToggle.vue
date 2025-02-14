@@ -22,6 +22,7 @@ const activateAnimationsLabel = computed(() => t('activateAnimations'))
   >
     <v-tooltip
       :text="animationToggleLabel"
+      :aria-label="animationToggleLabel"
       activator="parent"
       location="end"
     />
