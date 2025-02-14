@@ -24,42 +24,54 @@ watch(locale, () => {
 
 <template>
   <nav class="social-links" aria-label="Redes sociales">
-    <div role="list" class="social-links__list">
-      <a
-        v-for="link in socialLinks"
-        :key="link.name"
-        :href="link.url"
-        :aria-label="link.name"
-        class="social-links__item"
-        target="_blank"
-        rel="noopener noreferrer"
-        role="listitem"
-      >
-        <v-tooltip
-          :text="link.name"
-          activator="parent"
-          location="end"
-        />
-        <v-icon>{{ link.icon }}</v-icon>
-      </a>
-      <a
-        :href="locale === 'es' ? '/cv/cv-es.pdf' : '/cv/cv-en.pdf'"
-        class="social-links__item"
-        :aria-label="cvLabel"
-        target="_blank"
-      >
-        <v-tooltip
-          :text="cvLabel"
-          activator="parent"
-          location="end"
-        />
-        <v-icon>mdi-download-box-outline</v-icon>
-      </a>
+    <div class="social-links__list">
+      <ul>
+        <li v-for="link in socialLinks">
+          <a
+
+            :key="link.name"
+            :href="link.url"
+            :aria-label="link.name"
+            class="social-links__item"
+            target="_blank"
+            rel="noopener noreferrer"
+            role="listitem"
+          >
+            <v-tooltip
+              :text="link.name"
+              activator="parent"
+              location="end"
+            />
+            <v-icon>{{ link.icon }}</v-icon>
+          </a>
+        </li>
+        <li>
+          <a
+            :href="locale === 'es' ? '/cv/cv-es.pdf' : '/cv/cv-en.pdf'"
+            class="social-links__item"
+            :aria-label="cvLabel"
+            target="_blank"
+          >
+            <v-tooltip
+              :text="cvLabel"
+              activator="parent"
+              location="end"
+            />
+            <v-icon>mdi-download-box-outline</v-icon>
+          </a>
+        </li>
+      </ul>
     </div>
   </nav>
 </template>
 
 <style scoped>
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+}
 .social-links__list {
   display: flex;
   justify-content: center;

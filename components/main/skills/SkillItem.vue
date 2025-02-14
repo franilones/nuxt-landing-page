@@ -42,5 +42,6 @@ const altText = computed(() => {
 .skill-item__name {
   font-size: 16px;
   text-align: center;
+  color: var(--primary-color);
 }
 </style>
