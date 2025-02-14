@@ -47,6 +47,11 @@ export default defineNuxtConfig({
       },
     },
   },
+  components: {
+    dirs: [
+      '~/components',
+    ],
+  },
   compatibilityDate: '2025-02-04',
   devtools: { enabled: true },
 })

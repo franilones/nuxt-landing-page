@@ -4,7 +4,7 @@ import { useLocalStorageStore } from './useLocalStorageStore'
 
 export const useAnimationStore = defineStore('animation', () => {
   const localStorageStore = useLocalStorageStore()
-  const areAnimationsEnabled = ref(true)
+  const areAnimationsEnabled = ref<boolean>(true)
 
   function toggleAnimations() {
     areAnimationsEnabled.value = !areAnimationsEnabled.value

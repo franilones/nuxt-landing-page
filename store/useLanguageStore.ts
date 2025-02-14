@@ -1,4 +1,4 @@
-import type { Language } from '~/models/Language'
+import type { Language, LanguageCode } from '~/types/language'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
@@ -13,7 +13,7 @@ export const useLanguageStore = defineStore('language', () => {
     { code: 'en', name: 'English', flag: '🇬🇧' },
   ]
 
-  const currentLanguage = ref(languages[0])
+  const currentLanguage = ref<Language>(languages[0])
 
   function getLanguageName() {
     return currentLanguage.value.name
@@ -21,7 +21,7 @@ export const useLanguageStore = defineStore('language', () => {
 
   function setLanguage(language: Language) {
     currentLanguage.value = language
-    setLocale(language.code as 'en' | 'es')
+    setLocale(language.code)
     document.documentElement.setAttribute('lang', language.code)
     localStorageStore.updateUserPreferences({ language: language.code })
   }

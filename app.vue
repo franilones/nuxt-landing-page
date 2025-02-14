@@ -22,10 +22,6 @@ const languageStore = useLanguageStore()
 const themeStore = useThemeStore()
 const animationStore = useAnimationStore()
 
-function sayHello(): void {
-  console.warn('¡Vuetify está funcionando correctamente con TypeScript!')
-}
-
 onMounted(() => {
   languageStore.initializeLanguage()
   themeStore.initializeTheme()
@@ -36,15 +32,11 @@ onMounted(() => {
 <template>
   <v-app>
     <Header />
-    <v-main :aria-label="$t('mainContent')" class="main-content">
-      <AboutMe />
-    </v-main>
+    <MainContent />
     <Footer />
   </v-app>
 </template>
 
 <style scoped>
-.main-content {
-  background-color: var(--background-color-secondary);
-}
+
 </style>

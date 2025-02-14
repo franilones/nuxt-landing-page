@@ -20,15 +20,17 @@ const contactTitle = computed(() => t('contactMe'))
     <div class="footer__contact-info">
       <div class="footer__top-info">
         <a href="mailto:franolmosdev@gmail.com" class="footer__link" data-testid="email-link">
-          <v-icon>mdi-email</v-icon> franolmosdev@gmail.com
+          <v-icon class="mr-1">mdi-email</v-icon> franolmosdev@gmail.com
         </a>
         <a href="tel:+34605362008" class="footer__link" data-testid="phone-link">
-          <v-icon>mdi-phone</v-icon> (+34) 605 362 008
+          <v-icon class="mr-1">mdi-phone</v-icon> (+34) 605 362 008
         </a>
       </div>
       <div class="footer__bottom-info">
         <div class="footer__location" data-testid="location">
-          <v-icon>mdi-map-marker</v-icon> Valencia, {{ locationTitle }}
+          <v-icon class="mr-1">
+            mdi-map-marker
+          </v-icon> Valencia, {{ locationTitle }}
         </div>
       </div>
     </div>
