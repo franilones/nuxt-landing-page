@@ -1,18 +1,21 @@
 <script setup lang="ts">
 import type { Skill } from '~/types/skill'
+import { useI18n } from '#imports'
 import SkillItem from './SkillItem.vue'
 
 const props = defineProps<{
   title: string
   skills: Skill[]
 }>()
+
+const { t } = useI18n()
 </script>
 
 <template>
   <div class="skills__section">
-    <h3 class="skills__section__title text-h6 mb-4">
-      {{ props.title }}
-    </h3>
+    <h2 class="skills__section__title text-h6 mb-4">
+      {{ t(title) }}
+    </h2>
     <div class="skills__section__content">
       <SkillItem
         v-for="skill in props.skills"

@@ -36,6 +36,12 @@
     "photoAlt": "Photo of Francisco Olmos"
   },
   "skills": {
-    "title": "Skills"
+    "title": "Skills",
+    "sections": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "others": "Others",
+      "testing": "Testing"
+    }
   }
 }

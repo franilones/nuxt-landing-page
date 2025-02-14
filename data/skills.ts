@@ -2,40 +2,40 @@ import type { SkillSection } from '~/types/skill'
 
 export const skillSections: SkillSection[] = [
   {
-    title: 'Frontend',
+    title: 'skills.sections.frontend',
     skills: [
-      { name: 'Javascript', icon: 'Javascript' },
-      { name: 'Nuxt', icon: 'Nuxt' },
-      { name: 'Typescript', icon: 'Typescript' },
-      { name: 'Vuetify', icon: 'Vuetify' },
+      { name: 'Vue', icon: 'vue' },
+      { name: 'Javascript', icon: 'javascript' },
+      { name: 'Nuxt', icon: 'nuxt' },
+      { name: 'Typescript', icon: 'typescript' },
     ],
   },
   {
-    title: 'Backend',
+    title: 'skills.sections.backend',
     skills: [
-      { name: 'Java', icon: 'Java' },
-      { name: 'OpenAPI', icon: 'OpenAPI' },
-      { name: 'Spring', icon: 'Spring' },
+      { name: 'Java', icon: 'java' },
+      { name: 'OpenAPI', icon: 'openapi' },
+      { name: 'Spring', icon: 'spring' },
     ],
   },
   {
-    title: 'Otros',
+    title: 'skills.sections.others',
     skills: [
-      { name: 'C', icon: 'C' },
-      { name: 'Docker', icon: 'Docker' },
-      { name: 'Linux', icon: 'Linux' },
-      { name: 'Git', icon: 'Git' },
-      { name: 'MongoDB', icon: 'MongoDB' },
-      { name: 'Sql', icon: 'Sql' },
+      { name: 'C', icon: 'c' },
+      { name: 'Docker', icon: 'docker' },
+      { name: 'Linux', icon: 'linux' },
+      { name: 'Git', icon: 'git' },
+      { name: 'MongoDB', icon: 'mongodb' },
+      { name: 'Sql', icon: 'sql' },
     ],
   },
   {
-    title: 'Testing',
+    title: 'skills.sections.testing',
     skills: [
-      { name: 'Cypress', icon: 'Cypress' },
-      { name: 'Jest', icon: 'Jest' },
-      { name: 'JUnit', icon: 'JUnit' },
-      { name: 'Vitest', icon: 'Vitest' },
+      { name: 'Cypress', icon: 'cypress' },
+      { name: 'Jest', icon: 'jest' },
+      { name: 'JUnit', icon: 'junit' },
+      { name: 'Vitest', icon: 'vitest' },
     ],
   },
 ]
