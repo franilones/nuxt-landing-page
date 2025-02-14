@@ -23,8 +23,8 @@ const altText = computed(() => {
       :src="`/icons/technologies/${icon}.svg`"
       :alt="altText"
       class="skill-item__icon"
-      width="64"
-      height="64"
+      width="64px"
+      height="64px"
       loading="lazy"
     >
     <span class="skill-item__name">{{ name }}</span>
