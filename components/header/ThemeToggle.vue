@@ -22,6 +22,7 @@ const changeDarkThemeLabel = computed(() => t('changeDarkTheme'))
   >
     <v-tooltip
       :text="themeToggleLabel"
+      :aria-label="themeToggleLabel"
       activator="parent"
       location="end"
     />
