@@ -1,6 +1,7 @@
 /* Default colours */
 :root {
     --background-color: #0fa4af;
+    --background-color-secondary:#eee2e2;
     --background-form-color:#2BCDD9;
     --background-form-header-color: #ffffff;
     --language-selector-text-color: #000000;
@@ -20,6 +21,7 @@
 /* Dark mode colours  #A29BFE #F4A261 */
 [data-theme="dark"] {
     --background-color: #1F2833;
+    --background-color-secondary: #2C3544;
     --background-form-color: #66fcf1;
     --background-form-header-color: #66fcf1;
     --language-selector-text-color: #000000;

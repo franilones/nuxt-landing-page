@@ -66,7 +66,9 @@ onUnmounted(() => {
 <style scoped>
 .header{
   background-color: var(--background-color);
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 .header__container {
   display: flex;
