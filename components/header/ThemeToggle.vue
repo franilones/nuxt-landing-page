@@ -8,8 +8,6 @@ const themeStore = useThemeStore()
 const themeToggleLabel = computed(() =>
   themeStore.isDarkTheme ? t('changeLightTheme') : t('changeDarkTheme'),
 )
-const changeLightThemeLabel = computed(() => t('changeLightTheme'))
-const changeDarkThemeLabel = computed(() => t('changeDarkTheme'))
 </script>
 
 <template>

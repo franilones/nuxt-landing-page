@@ -1,4 +1,4 @@
-import type { Language, LanguageCode } from '~/types/language'
+import type { Language } from '~/types/language'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'

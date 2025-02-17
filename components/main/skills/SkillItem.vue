@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { Skill } from '~/types/skill'
 import { useI18n } from '#imports'
 import { computed } from 'vue'
 

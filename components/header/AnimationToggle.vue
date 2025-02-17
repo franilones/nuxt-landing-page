@@ -8,8 +8,6 @@ const animationStore = useAnimationStore()
 const animationToggleLabel = computed(() =>
   animationStore.areAnimationsEnabled ? t('deactivateAnimations') : t('activateAnimations'),
 )
-const deactivateAnimationsLabel = computed(() => t('deactivateAnimations'))
-const activateAnimationsLabel = computed(() => t('activateAnimations'))
 </script>
 
 <template>

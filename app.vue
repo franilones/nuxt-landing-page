@@ -3,7 +3,6 @@ import Footer from './components/header/Footer.vue'
 <script setup lang="ts">
 import { useHead } from '#imports'
 import { onMounted } from 'vue'
-import AboutMe from '~/components/main/AboutMe.vue'
 import { useAnimationStore } from './store/useAnimationStore'
 import { useLanguageStore } from './store/useLanguageStore'
 import { useThemeStore } from './store/useThemeStore'
