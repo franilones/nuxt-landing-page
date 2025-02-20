@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AboutMe from './AboutMe.vue'
+import Experience from './experience/Experience.vue'
 import Skills from './skills/Skills.vue'
 </script>
 
@@ -7,6 +8,7 @@ import Skills from './skills/Skills.vue'
   <v-main :aria-label="$t('mainContent')" class="main-content">
     <AboutMe />
     <Skills />
+    <Experience />
   </v-main>
 </template>
 
