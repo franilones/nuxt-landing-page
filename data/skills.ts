@@ -32,6 +32,7 @@ export const skillSections: SkillSection[] = [
   {
     title: 'skills.sections.testing',
     skills: [
+      { name: 'Playwright', icon: 'playwright' },
       { name: 'Cypress', icon: 'cypress' },
       { name: 'Jest', icon: 'jest' },
       { name: 'JUnit', icon: 'junit' },

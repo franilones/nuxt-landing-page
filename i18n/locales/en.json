@@ -43,5 +43,35 @@
       "others": "Others",
       "testing": "Testing"
     }
+  },
+  "experience": {
+    "title": "Professional Experience",
+    "items": {
+      "insuit": {
+        "position": "Full Stack Developer",
+        "description": "Development and maintenance of web accessibility solutions.",
+        "responsibilities": [
+          "Development of AI solutions for web accessibility.",
+          "Web accessibility audits according to WCAG (UNE).",
+          "Frontend development with Vue, Nuxt and Vuetify.",
+          "Testing with Playwright, Jest, Vitest and Cypress.",
+          "RESTful API development with Spring Boot.",
+          "Preparation of accessibility audit reports.",
+          "Formation and mentoring of new team members.",
+          "Component and web page optimization."
+        ],
+        "logoAlt": "InSuit logo"
+      },
+      "GRCV": {
+        "position": "IT Support Technician",
+        "description": "Hardware and software maintenance and troubleshooting.",
+        "responsibilities": [
+          "Hardware and software maintenance and troubleshooting.",
+          "Network and connectivity diagnosis and problem solving.",
+          "User assistance and support."
+        ],
+        "logoAlt": "Gerencia Regional del Catastro de Valencia logo"
+      }
+    }
   }
 }
