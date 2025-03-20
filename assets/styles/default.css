@@ -15,6 +15,7 @@
     --success-color: #00796b;
     --success-background: #f0fff4;
     --animation-duration: 0.4s;
+    --animation-duration-long: 0.8s;
     --animation-state: running;
 }
 
@@ -38,6 +39,7 @@
 
 [data-reduced-motion="true"] {
     --animation-duration: 0s;
+    --animation-duration-long: 0s;
     --animation-state: paused;
 }
 

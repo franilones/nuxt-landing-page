@@ -12,12 +12,6 @@ const formattedDate = computed(() => {
   const { start, end } = props.experience.date
   return `${start} - ${t(end)}`
 })
-
-const altText = computed(() => {
-  return locale.value === 'es'
-    ? `Logo de ${props.experience.company}`
-    : `${props.experience.company} logo`
-})
 </script>
 
 <template>

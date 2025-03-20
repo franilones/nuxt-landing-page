@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AboutMe from './AboutMe.vue'
+import EducationTimeline from './education/EducationTimeline.vue'
 import Experience from './experience/Experience.vue'
 import Skills from './skills/Skills.vue'
 </script>
@@ -9,6 +10,7 @@ import Skills from './skills/Skills.vue'
     <AboutMe />
     <Skills />
     <Experience />
+    <EducationTimeline />
   </v-main>
 </template>
 
