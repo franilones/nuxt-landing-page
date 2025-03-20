@@ -73,5 +73,30 @@
         "logoAlt": "Gerencia Regional del Catastro de Valencia logo"
       }
     }
+  },
+  "education": {
+    "mainTitle": "Education",
+    "aria": {
+      "flipCard": "Interactive card: {date} - {title} Institution: {institution}"
+    },
+    "items": [
+      {
+        "title": "Introduction to Web Accesibility.",
+        "institution": "Edx."
+      },
+      {
+        "title": "Curso de Seguridad de las Tecnologías de la Información y las Comunicaciones.",
+        "institution": "Ángeles Centro Criptológico Nacional."
+      },
+      {
+        "title": "HND in Computer Science.",
+        "institution": "Escuela Superior de Arte y Tecnología (ESAT)."
+      },
+      {
+        "title": "Higher Degree in IT Systems Administration (ASIR).",
+        "institution": "Aula Campus."
+      }
+
+    ]
   }
 }
