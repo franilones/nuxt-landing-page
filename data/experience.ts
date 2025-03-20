@@ -7,8 +7,8 @@ export const experiences: Experience[] = [
     position: 'experience.items.insuit.position',
     logo: '/icons/Insuit.svg',
     date: {
-      start: '2022',
-      end: '2025',
+      start: 'January 2022',
+      end: 'February 2025',
     },
     description: 'experience.items.insuit.description',
     responsibilities: [
@@ -29,8 +29,8 @@ export const experiences: Experience[] = [
     position: 'experience.items.GRCV.position',
     logo: '/icons/catastro.svg',
     date: {
-      start: '2015',
-      end: '2017',
+      start: 'October 2015',
+      end: 'June 2017',
     },
     description: 'experience.items.GRCV.description',
     responsibilities: [
